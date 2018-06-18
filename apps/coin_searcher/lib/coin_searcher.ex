@@ -3,6 +3,7 @@ defmodule CoinSearcher do
   @chat_id Application.get_env(:certificate, :telegram_chat_id)
 
   def upbit_number_run(coin_number) do
+    IO.puts "hoithoit"
     %{:status_code => code} =
       HTTPoison.get!(
         "https://static.upbit.com/upbit-pc/pc_coin_open_popup_images/popup_market_#{coin_number}.png"
@@ -27,6 +28,7 @@ defmodule CoinSearcher do
   end
 
   def upbit_name_run() do
+    IO.puts "zzang"
     coins = String.split(@coin_names, ", ")
 
     Enum.each(coins, fn coin_name ->

@@ -27,8 +27,7 @@ defmodule CoinSearcher.MixProject do
   defp deps do
     [
       {:httpoison, "~> 1.0", override: true},
-      {:nadia, "~> 0.4.3"},
-      {:distillery, "~> 1.5", runtime: false}
+      {:nadia, "~> 0.4.3"}
     ]
   end
 end
