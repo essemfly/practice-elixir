@@ -1,0 +1,43 @@
+# Elixir CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-elixir/ for more details
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version here
+      - image: circleci/elixir:1.6
+      
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/postgres:9.4
+
+    working_directory: ~/udo
+    steps:
+      - checkout
+
+      # specify any bash command here prefixed with `run: `
+      - run: mix local.hex --force
+      - run: mix deps.get
+      - run: mix local.rebar --force
+      - run: mix ecto.create
+      - run: mix test
+
+  deploy:
+    machine:
+      enabled: true
+    working_directory: ~/udo
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "d5:71:75:46:c1:9d:23:ee:4c:dd:79:6e:bb:5a:a8:3a"
+      - run:
+          name: Deploy Over ssh
+          command: ssh $SSH_USER@$SSH_HOST "cd udo && git pull origin master && mix deps.get && env MIX_ENV=prod mix release && _build/prod/rel/certificate/bin/certificate stop && _build/prod/rel/certificate/bin/certificate start"
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - deploy
