@@ -34,7 +34,7 @@ jobs:
             - "d5:71:75:46:c1:9d:23:ee:4c:dd:79:6e:bb:5a:a8:3a"
       - run:
           name: Deploy Over ssh
-          command: ssh $SSH_USER@$SSH_HOST "cd udo && git pull origin master && mix deps.get && env MIX_ENV=prod mix release && _build/prod/rel/certificate/bin/certificate stop && _build/prod/rel/certificate/bin/certificate start"
+          command: ssh $SSH_USER@$SSH_HOST "cd udo && git pull origin master && mix deps.get && env MIX_ENV=prod mix release && _build/prod/rel/udo/bin/udo stop && _build/prod/rel/udo/bin/udo start"
 
 workflows:
   version: 2
