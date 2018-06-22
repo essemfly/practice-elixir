@@ -19,8 +19,10 @@ defmodule PushServer.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", PushServer do
-  #   pipe_through :api
-  # end
+  scope "/auth", PushServer do
+    pipe_through :browser
+
+    get "/:provider", AuthController, :request
+    get "/:provider/callback", AuthController, :callback
+  end
 end

@@ -54,3 +54,7 @@ config :push_server, PushServer.Repo,
   database: "push_server_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :ueberauth, Ueberauth.Strategy.Facebook.OAuth,
+  client_id: 236200620298920,
+  client_secret: "1e8c53293567564f032633537b8e7caf"

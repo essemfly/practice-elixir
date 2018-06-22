@@ -24,7 +24,7 @@ defmodule PushServer.Mixfile do
   def application do
     [
       mod: {PushServer, []},
-      extra_applications: [:logger]
+      extra_applications: [:logger, :ueberauth_facebook]
     ]
   end
 
@@ -44,7 +44,8 @@ defmodule PushServer.Mixfile do
       {:phoenix_html, "~> 2.10"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
-      {:cowboy, "~> 1.0"}
+      {:cowboy, "~> 1.0"},
+      {:ueberauth_facebook, "~> 0.7"}
     ]
   end
 
