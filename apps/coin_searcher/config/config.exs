@@ -33,4 +33,4 @@ config :nadia,
   token: "287199736:AAGeD3YqYheetV-1GTNUOfQZwrYTGo23PZ4",
   recv_timeout: 10
 
-config :certificate, telegram_chat_id: -1_001_188_698_575
+config :coin_searcher, telegram_chat_id: -1_001_188_698_575
