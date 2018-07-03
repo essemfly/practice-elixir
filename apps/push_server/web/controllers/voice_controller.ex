@@ -9,7 +9,7 @@ defmodule PushServer.VoiceController do
     
     if token == "4sdlXBNV2mdGmGKqjxzuEPna" do
       CoinSearcher.send_telegram_msg(text)
-      json conn, %{"text": text}
+      json conn, %{}
     else
       json conn, %{"text": "invalid token"}
     end
