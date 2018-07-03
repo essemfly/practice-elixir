@@ -30,7 +30,7 @@ use Mix.Config
 #     import_config "#{Mix.env}.exs"
 
 config :nadia,
-  token: "287199736:AAGeD3YqYheetV-1GTNUOfQZwrYTGo23PZ4",
+  token: "287199736:AAE5v3lJulJ9m1WbuuyfoRmozwjyBye5lAg",
   recv_timeout: 10
 
 config :coin_searcher, telegram_chat_id: -1_001_188_698_575

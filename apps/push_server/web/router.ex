@@ -25,4 +25,8 @@ defmodule PushServer.Router do
     get "/:provider", AuthController, :request
     get "/:provider/callback", AuthController, :callback
   end
+
+  scope "/voice", PushServer do
+    post "/", VoiceController, :index
+  end
 end

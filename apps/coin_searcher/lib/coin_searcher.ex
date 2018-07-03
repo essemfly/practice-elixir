@@ -52,4 +52,11 @@ defmodule CoinSearcher do
 
     upbit_name_run()
   end
+
+  def send_telegram_msg(text) do
+    Nadia.send_message(
+      @chat_id,
+      text
+    )
+  end
 end
