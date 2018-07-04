@@ -30,3 +30,8 @@ config :ueberauth, Ueberauth,
   providers: [
     facebook: {Ueberauth.Strategy.Facebook, []}
   ]
+
+config :pigeon, :fcm,
+  fcm_default: %{
+    key: "AAAANovOgKo:APA91bHJm-w1hJ49slidqZ-RlmgfvjwwnlF0-qDR_4P2ucmLRpTUxDkp3yFcYoKZB4V4BpT1beExl8lfmoVujLfJ-3mqqAyGLSHftb39u9joZtKA--0jPeRKcwJMe6FzQ8VuzV-bOjAC"
+  }
