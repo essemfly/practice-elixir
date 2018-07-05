@@ -9,7 +9,7 @@ defmodule PushServer.VoiceController do
     
     if token == "4sdlXBNV2mdGmGKqjxzuEPna" do
       msg = %{ "body" => text }
-      registration_id = "f2pEx--WRQs:APA91bHPQdu7w2YhaU31Nrx0RnNeOUfPAE9xNjzTDlWtpdjEy4SroF0tR1Q94ttxXlA3yVceEVDGeCvCznkO8rrVuiM6Cz9wM_9EyMe8CbeAdHiPZ6jlrJ_y9iKYQkuGbr9kVVZKIkS6jv7_lCwbCy0m5Q7X1j2qnQ"
+      registration_id = "cvuQvZlGhD0:APA91bFyja1zaABnsTlRx56DGc0aK8p0PMEe6u9lxu8s17RSCq1T-WeYSytgAWNkCXNPD9fvz__aPDmnq_1O1VzK_Hcxa_0xPt79T2GKuws2IjCLkK5YGSZhaoIbg3h-cRqe9yAXgkhstsf9bJhkS-3vzN-7p49qoA"
       n = Pigeon.FCM.Notification.new(registration_id, msg)
       Pigeon.FCM.push(n)
     else
