@@ -1,4 +1,4 @@
-defmodule GostopWeb.PageControllerTest do
+defmodule GostopWeb.LoginControllerTest do
   use GostopWeb.ConnCase
 
   test "GET /", %{conn: conn} do

@@ -1,4 +1,4 @@
-defmodule GostopWeb.PageController do
+defmodule GostopWeb.LoginController do
   use GostopWeb, :controller
 
   alias Gostop.Auth
@@ -16,7 +16,7 @@ defmodule GostopWeb.PageController do
 
     conn
     |> put_flash(:info, message)
-    |> render("index.html", changeset: changeset, action: page_path(conn, :login), maybe_user: maybe_user)
+    |> render("index.html", changeset: changeset, action: login_path(conn, :login), maybe_user: maybe_user)
   end
 
   def login(conn, %{"user" => %{"username" => username, "password" => password}}) do
@@ -40,7 +40,7 @@ defmodule GostopWeb.PageController do
   def logout(conn, _) do
     conn
     |> Guardian.Plug.sign_out()
-    |> redirect(to: page_path(conn, :login))
+    |> redirect(to: login_path(conn, :login))
   end
 
   def main(conn, _params) do

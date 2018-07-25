@@ -22,14 +22,14 @@ defmodule GostopWeb.Router do
   # Maybe logged in scope
   scope "/", GostopWeb do
     pipe_through [:browser, :auth]
-    get "/", PageController, :index
-    post "/", PageController, :login
-    post "/logout", PageController, :logout
+    get "/", LoginController, :index
+    post "/", LoginController, :login
+    post "/logout", LoginController, :logout
   end
   # Definitely logged in scope
   scope "/", GostopWeb do
     pipe_through [:browser, :auth, :ensure_auth]
-    get "/main", PageController, :main
+    get "/main", LoginController, :main
   end
 
   # Other scopes may use custom stacks.
