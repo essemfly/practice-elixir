@@ -27,9 +27,9 @@ defmodule GostopWeb.Router do
     post "/logout", LoginController, :logout
   end
   # Definitely logged in scope
-  scope "/", GostopWeb do
+  scope "/main", GostopWeb do
     pipe_through [:browser, :auth, :ensure_auth]
-    get "/main", LoginController, :main
+    get "/", LoungeController, :index
   end
 
   # Other scopes may use custom stacks.
