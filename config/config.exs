@@ -6,16 +6,14 @@
 use Mix.Config
 
 # General application configuration
-config :gostop,
-  ecto_repos: [Gostop.Repo]
+config :gostop, ecto_repos: [Gostop.Repo]
 
 # Configures the endpoint
 config :gostop, GostopWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "W63ekSqEwLNFub4TtJqDE8PXqTZYOjovnSXE0BSQ1S1FUoXJvcAWMO8R6EgIyD8E",
   render_errors: [view: GostopWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Gostop.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: Gostop.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -28,4 +26,4 @@ config :gostop, Gostop.Auth.Guardian,
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env}.exs"
+import_config "#{Mix.env()}.exs"
