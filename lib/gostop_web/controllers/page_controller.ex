@@ -23,23 +23,27 @@ defmodule GostopWeb.PageController do
     Auth.authenticate_user(username, password)
     |> login_reply(conn)
   end
+
   defp login_reply({:error, error}, conn) do
     conn
     |> put_flash(:error, error)
     |> redirect(to: "/")
   end
+
   defp login_reply({:ok, user}, conn) do
     conn
     |> put_flash(:success, "Welcome back!")
     |> Guardian.Plug.sign_in(user)
-    |> redirect(to: "/")
+    |> redirect(to: "/main")
   end
+
   def logout(conn, _) do
     conn
     |> Guardian.Plug.sign_out()
     |> redirect(to: page_path(conn, :login))
   end
-  def secret(conn, _params) do
-    render(conn, "secret.html")
+
+  def main(conn, _params) do
+    render(conn, "main.html")
   end
 end

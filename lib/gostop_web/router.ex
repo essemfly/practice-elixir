@@ -29,7 +29,7 @@ defmodule GostopWeb.Router do
   # Definitely logged in scope
   scope "/", GostopWeb do
     pipe_through [:browser, :auth, :ensure_auth]
-    get "/secret", PageController, :secret
+    get "/main", PageController, :main
   end
 
   # Other scopes may use custom stacks.
