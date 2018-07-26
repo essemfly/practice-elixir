@@ -1,16 +1,15 @@
 <template>
-  <div id="login">
+  <div id="lounge">
     <h1>{{ msg }}</h1>
-    <h2>The following was loaded over Graphql:</h2>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'login',
+  name: 'lounge',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js & Phoenix & GraphQL App',
+      msg: 'Main page 랍니다',
       user: ""
     }
   }
