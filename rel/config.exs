@@ -30,13 +30,13 @@ environment :dev do
   # dev mode.
   set dev_mode: true
   set include_erts: false
-  set cookie: :"aLuQpscN:j0V8_<MYI4Q*v|p4T3*0ugnqmN=*^(DtfA:@>Vg198=,<f_xk%(_qd9"
+  set cookie: :"|>Yg5%&~@5Kt[3L~f*|My;c7c0eq_t)UnzBDDe@8phrm%>E:._@IErlclxM3ZGmW"
 end
 
 environment :prod do
   set include_erts: true
   set include_src: false
-  set cookie: :"Y:,Y=u.ET@jqNa<>]GAc_7VC&h}nh`!WY3e9Y=H?|zqOp^^L(|%jm,LuEVV9ENZd"
+  set cookie: :"bA*LY^Wc>S:52yXc?H!iW.K~Mj6,M.W&08pI8qNMs3p_SX(ktMaTifX&hpvt4{Bv"
 end
 
 # You may define one or more releases in this file.
@@ -49,6 +49,7 @@ release :udo do
   set applications: [
     :runtime_tools,
     coin_searcher: :permanent,
+    gostop: :permanent,
     push_server: :permanent
   ]
 end

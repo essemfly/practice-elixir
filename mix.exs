@@ -16,7 +16,8 @@ defmodule Udo.MixProject do
   # Run "mix help deps" for examples and options.
   defp deps do
     [
-      {:distillery, "~> 1.5", runtime: false}
+      {:distillery, "~> 1.5", runtime: false},
+      {:edeliver, "~> 1.5.3"}
     ]
   end
 end

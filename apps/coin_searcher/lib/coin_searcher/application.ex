@@ -8,14 +8,14 @@ defmodule CoinSearcher.Application do
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
-      %{
-        id: UpbitNumberRun,
-        start: {Task, :start_link, [CoinSearcher, :upbit_number_run, [34]]}
-      },
-      %{
-        id: UpbitNamesRun,
-        start: {Task, :start_link, [CoinSearcher, :upbit_name_run, []]}
-      }
+      # %{
+      #   id: UpbitNumberRun,
+      #   start: {Task, :start_link, [CoinSearcher, :upbit_number_run, [34]]}
+      # },
+      # %{
+      #   id: UpbitNamesRun,
+      #   start: {Task, :start_link, [CoinSearcher, :upbit_name_run, []]}
+      # }
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

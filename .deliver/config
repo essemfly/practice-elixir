@@ -1,0 +1,29 @@
+APP="udo"
+
+# AUTO_VERSION="commit-count+git-revision+branch-unless-master"
+
+BUILD_HOST="essemfly.com"
+BUILD_AT="/tmp/edeliver/udo/builds"
+BUILD_USER="essem"
+
+PRODUCTION_HOSTS="essemfly.com"
+PRODUCTION_USER="essem"
+DELIVER_TO="/home/essem"
+
+pre_erlang_get_and_update_deps() {
+  # copy it on the build host to the build directory when building
+  if [ "$DEPLOY_ENVIRONMENT" = "production" ]; then
+    local _secret_config_file_on_build_host="/home/essem/prod.secret.exs"
+  else
+    local _secret_config_file_on_build_host="/home/essem/stage.secret.exs"
+  fi
+  if [ "$TARGET_MIX_ENV" = "prod" ]; then
+    status "Linking '$_secret_config_file_on_build_host' to build config dir"
+    __sync_remote "
+      ln -sfn '$_secret_config_file_on_build_host' '$BUILD_AT/apps/gostop/config/prod.secret.exs'
+    "
+    __sync_remote "
+      ln -sfn '$_secret_config_file_on_build_host' '$BUILD_AT/apps/push_server/config/prod.secret.exs'
+    "
+  fi
+}
