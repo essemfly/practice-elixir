@@ -15,8 +15,8 @@ use Mix.Config
 # which you typically run after static files are built.
 config :gostop, GostopWeb.Endpoint,
   http: [port: 8088],
-  cache_static_lookup: false,
-  check_origin: false
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  server: true
 
 # Do not print debug messages in production
 config :logger, level: :info
