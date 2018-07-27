@@ -6,7 +6,7 @@ BUILD_HOST="essemfly.com"
 BUILD_AT="/tmp/edeliver/udo/builds"
 BUILD_USER="essem"
 
-PRODUCTION_HOSTS="mix.essemfly.com gostop.essemfly.com"
+PRODUCTION_HOSTS="gostop.essemfly.com"
 PRODUCTION_USER="essem"
 DELIVER_TO="/home/essem"
 
