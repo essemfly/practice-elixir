@@ -4,7 +4,7 @@ defmodule Gostop.Mixfile do
   def project do
     [
       app: :gostop,
-      version: "0.0.1",
+      version: append_revision("0.0.1"),
       elixir: "~> 1.4",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
@@ -12,6 +12,16 @@ defmodule Gostop.Mixfile do
       aliases: aliases(),
       deps: deps()
     ]
+  end
+
+  def append_revision(version) do
+    "#{version}+#{revision()}"
+  end
+
+  defp revision() do
+    System.cmd("git", ["rev-parse", "--short", "HEAD"])
+    |> elem(0)
+    |> String.trim_trailing
   end
 
   # Configuration for the OTP application.
