@@ -10,9 +10,6 @@ PRODUCTION_HOSTS="mix.essemfly.com gostop.essemfly.com"
 PRODUCTION_USER="essem"
 DELIVER_TO="/home/essem"
 
-RELEASE_DIR="$BUILD_AT/apps/$APP/rel/$APP"
-
-
 pre_erlang_get_and_update_deps() {
   # copy it on the build host to the build directory when building
   local _secret_config_file_on_build_host="/home/essem/prod.secret.exs"
